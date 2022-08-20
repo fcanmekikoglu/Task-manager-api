@@ -52,7 +52,7 @@ router.post('/users/logoutAll', auth, async (req, res) => {
         req.status(500).send()
     }
 })
-//List all users
+//Read all users
 router.get('/users/me', auth, async (req, res) => {
     res.send(req.user)
 })
