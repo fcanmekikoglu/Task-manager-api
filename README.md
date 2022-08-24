@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to task-manager 👋</h1>
+<h1 align="center">Welcome to Task Manager API 👋</h1>
 <p>
   <a href="https://www.npmjs.com/package/task-manager" target="_blank">
     <img alt="Version" src="https://img.shields.io/npm/v/task-manager.svg">
