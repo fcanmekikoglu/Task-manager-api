@@ -36,25 +36,25 @@ test('Should signup a new user', async () => {
 test('Should not signup a new user with invalid credentials', async () => {
     const invalidName = {
         name: '',
-        email:'example@mail.com',
+        email: 'example@mail.com',
         password: 'Sifremmm123'
     }
     const invalidMail = {
         name: 'Can Mekikoğlu',
-        email:'example@mail',
+        email: 'example@mail',
         password: 'Sifremmm123'
     }
     const invalidPswOne = {
         name: 'Can Mekikoğlu',
-        email:'example@mail.com',
+        email: 'example@mail.com',
         password: 'Sifreemmmpassword'
     }
     const invalidPswTwo = {
         name: 'Can Mekikoğlu',
-        email:'example@mail.com',
+        email: 'example@mail.com',
         password: 'asd'
     }
-    
+
     await request(app)
         .post('/users')
         .send(invalidName)
@@ -152,9 +152,10 @@ test('Should update valid user fields', async () => {
         .send(updateField)
         .expect(200)
 
+
     expect(response.body.name).toEqual(updateField.name)
 })
-test('Should not update user if unauthenticated', async()=>{
+test('Should not update user if unauthenticated', async () => {
     await request(app)
         .patch('/users/me')
         .set('Authorization', ``)
@@ -175,7 +176,7 @@ test('Should not update invalid user fields', async () => {
         .expect(400)
 })
 
-test('Should not update user with invalid name/email/password', async()=>{
+test('Should not update user with invalid name/email/password', async () => {
     await request(app)
         .patch('/users/me')
         .set('Authorization', `Bearer ${userOne.tokens[0].token}`)

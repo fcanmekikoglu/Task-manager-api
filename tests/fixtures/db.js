@@ -53,7 +53,7 @@ const taskThree = {
 
 const setupDatabase = async () => {
     //Delete everything before every test case and save valid user and tasks to db
-    
+
     await User.deleteMany()
     await Task.deleteMany()
     await new User(userOne).save()
